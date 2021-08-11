@@ -9,7 +9,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "eqeqeq": 0,
+    "eqeqeq": "error",
     "curly": "error",
     "semi": ["error", "always"],
     "quotes": ["error", "single"]
