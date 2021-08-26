@@ -27,15 +27,17 @@
     "SharedArrayBuffer": "readonly",
     "React": "writable"
   },
-
   "settings": {
     "react": {
       "version": "detect"
     }
   },
   "plugins": ["react", "react-hooks"],
+  "ignorePatterns": ["test/*.js"],
   "rules": {
     "react/react-in-jsx-scope": "off",
+    "no-underscore-dangle": ["error", { "allow": ["_id", "_db"] }],
+    "no-unused-vars": "warn",
     "no-console": "off",
     "eqeqeq": ["error", "always"],
     "semi": ["error", "always"],

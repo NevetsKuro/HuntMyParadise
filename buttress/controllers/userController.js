@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import asyncHandler from "express-async-handler";
 import User from "../models/userModel.js";
 import generateToken from "../utils/generateToken.js";
@@ -7,8 +8,8 @@ const authUser = asyncHandler(async (req, res) => {
 
   const user = await User.findOne({ email });
 
-  if (user && (await user.matchPassword(password))) {
-    res.json({
+  if (user && (await user.matchPassword(password, user.password))) {
+    return res.json({
       _id: user._id,
       name: user.name,
       email: user.email,
@@ -16,8 +17,9 @@ const authUser = asyncHandler(async (req, res) => {
       token: generateToken(user._id),
     });
   } else {
-    res.status(401);
-    throw new Error("Invalid email or Password");
+    return res
+      .status(401)
+      .json({ status: 0, message: "Invalid email or Password" });
   }
 });
 
@@ -30,18 +32,19 @@ const registerUser = asyncHandler(async (req, res) => {
   const userExists = await User.findOne({ email });
 
   if (userExists) {
-    res.status(400);
-    throw new Error("User already exists");
+    return res.status(400).json({ status: 0, message: "User already exists" });
   }
 
   const user = await User.create({
     name,
     email,
     password,
+    timestamps: new Date(),
+    isAdmin: false,
   });
 
   if (user) {
-    res.status(201).json({
+    return res.status(200).json({
       _id: user._id,
       name: user.name,
       email: user.email,
@@ -49,14 +52,13 @@ const registerUser = asyncHandler(async (req, res) => {
       token: generateToken(user._id),
     });
   } else {
-    res.status(400);
-    throw new Error("Invalid user data");
+    return res.status(400).json({ status: 0, message: "Invalid user data" });
   }
 });
 
 const getUsers = asyncHandler(async (req, res) => {
   const users = await User.find({});
-  res.json(users);
+  return res.status(200).json(users);
 });
 
 export { authUser, registerUser, getUsers };

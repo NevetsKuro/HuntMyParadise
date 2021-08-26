@@ -1,11 +1,13 @@
-import path from "path";
+/* eslint-disable import/extensions */
 import express from "express";
 import dotenv from "dotenv";
+import debug from "debug";
 
 import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 
 // const __dirname = path.resolve();
+const logger = debug("http");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -18,11 +20,11 @@ app.use(express.json());
 
 app.use("/api/users", userRoutes);
 
-app.get("/", function (req, res) {
-  res.send("Server is working A-okay!");
+app.get("/", (req, res) => {
+  res.send("HuntMyparadise Server is working A-okay!");
 });
 
 app.listen(
   PORT,
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+  logger(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`),
 );

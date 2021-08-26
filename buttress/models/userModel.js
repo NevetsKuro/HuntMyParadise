@@ -29,10 +29,10 @@ const userSchema = mongoose.Schema(
   }
 );
 
-userSchema.methods.matchPassword = async function (enteredPassword) {
-  return await bcrypt.compare(enteredPassword, this.password);
-};
+userSchema.methods.matchPassword = (enteredPassword, existingPassword) =>
+  bcrypt.compare(enteredPassword, existingPassword);
 
+// eslint-disable-next-line func-names
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     next();
