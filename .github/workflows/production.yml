@@ -24,9 +24,13 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        node-version: '14'
+        check-latest: true
         
+    - name: Versions
+      run: >
+        npm -v
+        node -v
     - name: Install Deps without devDeps
       working-directory: ./protege
       run: yarn install --production
