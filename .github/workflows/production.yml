@@ -35,10 +35,6 @@ jobs:
       working-directory: ./protege
       run: yarn install --production
       
-    - name: Run Linters
-      working-directory: ./protege
-      run: yarn run lint
-      
     - name: Build Project
       working-directory: ./protege
       run: yarn run build
