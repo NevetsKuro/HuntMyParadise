@@ -28,14 +28,14 @@ jobs:
         check-latest: true
         
     - name: Versions
-      run: >
+      run: |
         npm -v
         node -v
     
     - name: Installing yarn
-      run: > 
+      run: |
           npm install -g yarn
-          yarn add --dev eslint eslint-config-next
+          yarn global add -D eslint eslint-config-next
       
     - name: Install Deps without devDeps
       working-directory: ./protege
