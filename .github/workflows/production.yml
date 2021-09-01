@@ -48,10 +48,6 @@ jobs:
     - name: Installing yarn
       run: yarn --frozen-lockfile
     
-    - name: Run Linters
-      working-directory: ./protege
-      run: yarn run lint
-    
     - name: Install Deps without devDeps
       working-directory: ./protege
       run: yarn install --production
