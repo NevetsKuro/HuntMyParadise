@@ -38,6 +38,7 @@ jobs:
           yarn global add -D eslint eslint-config-next
     
     - name: Run Linters
+      working-directory: ./protege
       run: yarn run lint
     
     - name: Install Deps without devDeps
