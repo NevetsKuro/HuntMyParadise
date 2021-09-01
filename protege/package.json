@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint pages/** -c .eslintrc.json --ext js,jsx ",
-    "lint:fix": "eslint --fix src/pages/** -c .eslintrc.json --ext js,jsx",
+    "lint": "yarn run eslint pages/** -c .eslintrc.json --ext js,jsx ",
+    "lint:fix": "yarn run eslint --fix src/pages/** -c .eslintrc.json --ext js,jsx",
     "precommit": "yarn run lint:fix && yarn run build"
   },
   "dependencies": {
