@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Hotel Booking</title>
+</head>
+
+<body>
+    <div class="login_container">
+        <h1>Sign up</h1>
+        <form id="signup" name="signup" action="#" onsubmit="return validateform()" method="POST">
+            <div class="txt_feild">
+                <input id="fname" name="fname" type="text" required maxlength="25">
+                <span id="efname">Error message</span>
+                <label>First Name</label>
+            </div>
+            <div class="txt_feild">
+                <input id="lname" name="lname" type="text" required maxlength="25">
+                <span id="elname">Error message</span>
+                <label>Last Name</label>
+            </div>
+            <div class="txt_feild">
+                <input id="date" name="date" type="date" required>
+                <span id="edob">Error message</span>
+                <label>Date of Birth</label>
+            </div>
+            <div class="txt_feild">
+                <input id="phone" name="phone" type="number" required title="Enter a 10 digit Number."
+                    pattern="^/d{10}$">
+                <span id="ephone">Error message</span>
+                <label>Phone</label>
+            </div>
+            <div class="txt_feild">
+                <input id="email" name="email" type="email" required maxlength="40">
+                <span id="eemail">Error message</span>
+                <label>Email</label>
+            </div>
+            <div class="txt_feild">
+                <input id="password" name="password" type="password" required>
+                <span id="epass">Error message</span>
+                <label>Password</label>
+            </div>
+
+            <input type="submit" value="Sign up">
+            <div class="sign_uplink">
+                Already a User? <a href="index.html">Login</a>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+
+
+</html>
