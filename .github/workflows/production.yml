@@ -1,3 +1,4 @@
+  
 # This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 
 name: Build, Lint and Test Project
@@ -28,18 +29,30 @@ jobs:
         check-latest: true
         
     - name: Versions
-      run: >
+      run: |
         npm -v
         node -v
+    
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+        
+    - name: Cache yarn cache
+      uses: actions/cache@v2
+      id: yarn-cache
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-new
+        restore-keys: |
+          ${{ runner.os }}-yarn-new
+    
+    - name: Installing yarn
+      run: yarn --frozen-lockfile
+    
     - name: Install Deps without devDeps
       working-directory: ./protege
       run: yarn install --production
       
-    - name: Run Linters
-      working-directory: ./protege
-      run: yarn run lint
-      
     - name: Build Project
       working-directory: ./protege
       run: yarn run build
-      
