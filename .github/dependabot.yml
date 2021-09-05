@@ -3,14 +3,17 @@
 
 version: 2
 updates:
-  # Enable version updates for npm
   - package-ecosystem: "npm"
-    # Look for `package.json` and `lock` files in the `root` directory
     directory: "/buttress"
-    # Check the npm registry for updates every day (weekdays)
+    open-pull-requests-limit: 10
     schedule:
-      interval: "daily"
+      interval: "weekly"
     target-branch: "main"
+    labels:
+      - "dependencies"
+      - "frontend"
+    reviewers:
+      - "NevetsKuro"
     assignees:
       - "mangirish1999"
       - "Tushar981"
@@ -19,9 +22,15 @@ updates:
   - package-ecosystem: npm
     directory: "/protege"
     schedule:
-      interval: daily
+      interval: "weekly"
+      day: "sunday"
     open-pull-requests-limit: 10
     target-branch: "main"
+    labels:
+      - "dependencies"
+      - "backend"
+    reviewers:
+      - "NevetsKuro"
     assignees:
       - "NevetsKuro"
       
