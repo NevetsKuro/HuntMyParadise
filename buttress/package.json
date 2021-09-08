@@ -7,6 +7,12 @@
   "author": "DMTS",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "prepare": "cd .. && husky install buttress/.husky",
+    "test": "mocha",
+    "lint": "eslint ./controllers/** ./middleware/** ./models/** ./routes/** -c .eslintrc.json --ext js ",
+    "precommit": "yarn run lint && yarn test"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "chai": "^4.3.4",
@@ -24,7 +30,10 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.24.1",
-    "eslint-plugin-prettier": "^4.0.0"
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "prettier": "^2.3.2"
   }
 }

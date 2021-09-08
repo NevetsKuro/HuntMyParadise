@@ -1,4 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
-export default () =>{
-  return 'Steven s Page';
-}
+
+export default () => 'Steven s Page';
