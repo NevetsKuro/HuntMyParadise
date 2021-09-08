@@ -1,4 +1,4 @@
 import React from 'react';
-export default Hello = () =>{
+const Hello = () =>{
   console.log('Hii');
 }
