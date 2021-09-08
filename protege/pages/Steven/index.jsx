@@ -1,4 +1,4 @@
 import React from 'react';
-const Hello = () =>{
-  console.log('Hii');
+export default () =>{
+  return 'Steven s Page';
 }
