@@ -1,0 +1,21 @@
+{
+  "name": "HuntMyParadise",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/NevetsKuro/HuntMyParadise.git",
+  "author": "steven <stevenfernz96@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "protege": "cd protege && yarn run lint && yarn run build",
+    "buttress": "cd buttress && yarn run lint && yarn run test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm-run-all protege buttress"
+    }
+  },
+  "dependencies": {
+    "husky": "^7.0.2",
+    "npm-run-all": "^4.1.5"
+  }
+}
