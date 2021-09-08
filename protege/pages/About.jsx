@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '../styles/global.module.css';
 
 function About() {
   return <div>Body of About</div>;

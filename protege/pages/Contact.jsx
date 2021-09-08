@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '../styles/global.module.css';
 
 function Contact() {
   return <div>Body of Contact Page</div>;

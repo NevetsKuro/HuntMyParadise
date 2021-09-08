@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '../styles/global.module.css';
 
 function Home() {
   return <div>Body of Home page</div>;
