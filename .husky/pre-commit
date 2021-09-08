@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+cd ./protege && yarn run lint && yarn run build
+cd ..
+cd ./buttress && yarn run lint && yarn run test
+
+# > exit 1 ## Command for forcing commit to be aborted
