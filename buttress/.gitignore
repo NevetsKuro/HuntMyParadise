@@ -2,9 +2,10 @@
 
 logs
 _.log
-_.lock
+yarn.lock
+package-lock.json
 _-lock.json
-npm-debug.log_
+npm-debug.log\_
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*

@@ -21,6 +21,7 @@
 
 # debug
 *.lock
+yarn.lock
 *-lock.json
 npm-debug.log*
 yarn-debug.log*
