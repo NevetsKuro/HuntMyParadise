@@ -1,0 +1,81 @@
+.projectHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 24px 0;
+}
+
+.headerLeft {
+    position: relative;
+    padding: 8px 24px;
+    min-width: 250px;
+}
+
+.titleContainer {
+    padding: 8px;
+    border-radius: 8px;
+    background: cadetblue;
+    cursor: pointer;
+    user-select: none;
+}
+
+.leftNavigation {
+    position: absolute;
+    top: 80px;
+    left: 24px;
+    min-height: 80vh;
+    min-width: 260px;
+    border-radius: 16px;
+    font-size: 17px;
+    font-weight: 600;
+    background: #BCC6DD;
+    color: white;
+}
+
+.headerCenter {
+    min-width: 250px;
+}
+
+.inputContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.searchInput {
+    padding: 12px 24px;
+    border-radius: 8px;
+    outline: none;
+    border: 2px solid #efefef;
+    margin: 8px;
+    min-width: 400px;
+    font-size: 16px;
+    background: #F5FAFE;
+}
+
+.searchIconButton {
+    margin: 16px 0;
+    font-weight: 600;
+    position: absolute;
+    right: 25px;
+    color: #525252;
+}
+
+.headerRight {
+    min-width: 250px;
+}
+
+.menuContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+.projectTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+}
