@@ -4,13 +4,12 @@ name: Build, Lint and Test Project
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -18,41 +17,40 @@ jobs:
         node-version: [14.17.x]
 
     steps:
-    - name: "Checkout"
-      uses: actions/checkout@v2
-      
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-        check-latest: true
-        
-    - name: Versions
-      run: |
-        npm -v
-        node -v
-    
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
-      run: echo "::set-output name=dir::$(yarn cache dir)"
-        
-    - name: Cache yarn cache
-      uses: actions/cache@v2
-      id: yarn-cache
-      with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-new
-        restore-keys: |
-          ${{ runner.os }}-yarn-new
-    
-    - name: Installing yarn
-      run: yarn --frozen-lockfile
-    
-    - name: Install Deps without devDeps
-      working-directory: ./protege
-      run: yarn install --production
-      
-    - name: Build Project
-      working-directory: ./protege
-      run: yarn run build
-      
+      - name: "Checkout"
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+          check-latest: true
+
+      - name: Versions
+        run: |
+          npm -v
+          node -v
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-new
+          restore-keys: |
+            ${{ runner.os }}-yarn-new
+
+      - name: Installing yarn
+        run: yarn --frozen-lockfile
+
+      - name: Install Deps without devDeps
+        working-directory: ./protege
+        run: yarn install --production
+
+      - name: Build Project
+        working-directory: ./protege
+        run: yarn run build
