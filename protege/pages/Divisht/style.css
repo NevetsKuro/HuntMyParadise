@@ -1,0 +1,384 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Open Sans', sans-serif;
+
+
+}
+
+.custom {
+
+    background-color: rgb(156, 161, 236);
+    color: #fff;
+    box-shadow: 10px 5px 5px rgb(234, 235, 247);
+    
+}
+
+.nav-brand button{
+    border-radius: 18px;
+}
+
+.nav-brand {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 24px;
+
+}
+
+
+.search-wrapper .search-box .input{
+
+    border: 0;
+    outline: none;
+}
+
+.search-box{
+
+    width: 250px;
+    height: 39px;
+}
+
+.search-box .input{
+    width: 100%;
+    height:100%;
+    background-color: rgb(226, 228, 255);
+    border-radius: 3px;
+    padding: 13px;
+}
+
+
+.search-box{
+
+    position: relative;
+}
+
+.search-box .search-button {
+    position:absolute;
+    top: 0;
+    right: 0;
+    }
+
+    .search-button{
+    width: 50px;
+    height: 100%;
+    background-color:rgb(156, 161, 236);
+    cursor: pointer;
+
+    }
+
+    .search-button .fas{
+
+        font-size:18px;
+        color:#fff;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .search-button:hover{
+
+        background-color:rgb(133, 141, 248); 
+             }
+
+
+
+                .addto-cart .fas{
+
+
+                    font-size: 20px;
+                }
+
+
+
+.user-profile {
+
+position: relative;
+}
+
+.user-image .fas{
+
+position: absolute;
+top: 10%;
+left: -35%;
+font-size: 20px;
+
+}
+.dropdown-select .fa{
+font-size: 20px;
+cursor: pointer;
+}
+
+.user-profile{
+display: flex;
+gap: 7px;
+}
+
+
+
+.left-section{
+
+display: flex;
+margin: 80px 110px;
+justify-content: space-between;
+
+
+
+}
+
+.left-section img{
+
+box-shadow: 10px 5px 5px rgb(233, 235, 253);
+border-radius: 10px;
+width: 640px;
+height:400px;
+
+}
+
+.main-class{
+
+
+    width: 100%;
+    margin: 0 auto;
+    padding: 9px 10px;
+}
+
+
+.right-section{
+
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+
+
+}
+
+.booked-hotel{
+
+    width: 400px;
+    height: 200px;
+    background-color: rgb(149, 155, 223);
+    padding:20px;
+
+
+
+
+}
+.booked-onMap{
+
+    width: 400px;
+    height: 200px;
+
+    
+}
+
+.booked-onMap img{
+
+    width: 100%;
+    height: 100%;
+}
+
+.booked-hotel{
+
+
+}
+
+.flex{
+    display: flex;
+    justify-content:space-between;
+
+}
+.booked-hotel p{
+
+
+    color: #fff;
+    
+
+
+}
+
+
+.booked-hotel .text{
+
+        margin:1px 8px;
+        font-weight: 1200;
+        font-size: 15px;
+
+}
+
+.booked-hotel .price{
+
+    font-weight:bold;
+    font-size: 25px;
+    margin:1px 8px;
+}
+
+.booked-hotel .no{
+font-size:15px;
+margin:1px 8px;
+
+
+}
+.booked-hotel h4{
+
+    font-size: 22px;
+    color: #fff;
+    font-weight:bold;
+    margin:14px 5px;
+    }
+
+    .guests{
+
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+    .guests .far{
+font-size: 18px; 
+
+
+}
+.guests p{
+
+    font-size:15px;
+    letter-spacing:1px; 
+
+}
+
+.butt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.butt button{
+
+
+    border: 0;
+    border-radius:4px;
+    font-size:15px;
+    padding: 5px 60px;
+    outline:none;
+    background-color: rgb(46, 110, 184);
+    color: #fff;
+    font-weight: 900;
+    font-size:16px;
+    cursor: pointer;
+    
+}
+
+.second-section {
+
+    width: 100%;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 120px;
+
+    
+}
+.checked {
+    color: orange;
+  }
+
+  .book-now{
+
+    border: 0;
+    border-radius:4px;
+    font-size:15px;
+    padding: 5px 60px;
+    outline:none;
+    background-color: rgb(46, 110, 184);
+    color: #fff;
+    font-weight: 900;
+    font-size:16px;
+    cursor: pointer;
+    margin-top: 30px;
+
+  }
+
+  .hotel-name{
+
+
+    margin-top:30px;
+
+  }
+  .ratings button{ 
+
+    border: 0;
+    border-radius:4px;
+    font-size:15px;
+    padding: 5px 20px;
+    outline:none;
+    background-color: rgb(46, 110, 184);
+    color: #fff;
+    font-weight: 900;
+    font-size:16px;
+    cursor: pointer;
+  }
+
+
+ .hotel-name h2{
+
+    font-weight: 900;
+ }
+
+
+ .footer-container{
+
+
+    width: 100%;
+    height: 200px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+  
+   
+  
+    background-image: linear-gradient(
+      to right,
+      rgb(156, 161, 236) 0%,
+      rgb(129, 136, 231) 51%,
+      rgb(156, 161, 236) 100%
+    );
+  
+    border-top-left-radius:14px ;
+    border-top-right-radius: 14px;
+   
+    margin-top: 20px;
+  }
+  
+  
+  
+  .footer-logo{
+  
+    width: 300px;
+  filter: brightness(0) invert(1);  
+  
+  }
+  
+  .list-items-footer ul{
+    color: #fff;
+    margin-top:-1em;
+  
+  
+  }
+  
+  .item li{
+    margin:6px 0;
+    list-style: none;
+  }
+  
+  
+  
+  
+
