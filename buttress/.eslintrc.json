@@ -16,6 +16,7 @@
   "plugins": ["import", "prettier"],
   "ignorePatterns": ["test/*.js"],
   "rules": {
+    "no-console": "off",
     "prettier/prettier": "error",
     "eqeqeq": "error",
     "no-underscore-dangle": ["error", { "allow": ["_id", "_db"] }],
