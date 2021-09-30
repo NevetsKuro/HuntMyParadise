@@ -1,0 +1,109 @@
+.login_container {
+    position: fixed;
+    top: 4%;
+    left: 35%;
+    width: 360px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+}
+
+.login_container h1 {
+    color: #32529F;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #32529F;
+}
+
+.login_container form {
+    padding: 0px 40px;
+    box-sizing: border-box;
+}
+
+form .txt_field {
+    position: relative;
+    border-bottom: 2px solid silver;
+    margin: 8px 0;
+}
+
+.txt_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 33px;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.txt_field label {
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(-50%);
+    font-size: 12px;
+    font-weight: 800;
+    pointer-events: auto;
+    transition: .5s;
+}
+
+.txt_field span {
+    color: #e74c3c;
+    top: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #32529F;
+    visibility: hidden;
+}
+
+.txt_field.error span {
+    visibility: visible;
+}
+
+.txt_field input~label {
+    top: -5px;
+    color: #32529F;
+    width: 100%;
+}
+
+.forgot {
+    margin: -5px 0 20px 5px;
+    color: #a6a6a6;
+    cursor: pointer;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+input.submit {
+    margin: 0 25%;
+    border: 1px solid;
+    background: #32529F;
+    width: 50%;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+input.submit:hover {
+    border-width: 2px;
+    border-color: #32529F;
+    transition: .5s;
+}
+
+.sign_uplink {
+    margin: 12px 0;
+    text-align: center;
+}
+
+input.date:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+    font-family: 'Nunito', sans-serif;
+}
+
+input.date:focus::-webkit-datetime-edit {
+    color: black !important;
+}

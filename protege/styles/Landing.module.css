@@ -1,0 +1,277 @@
+.custom {
+    background-color: rgb(156, 161, 236);
+    color: #fff;
+    box-shadow: 10px 5px 5px rgb(234, 235, 247);
+}
+
+.navBrand button {
+    border-radius: 18px;
+}
+
+.navBrand {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 24px;
+}
+
+.searchWrapper .searchBox .input {
+    border: 0;
+    outline: none;
+}
+
+.searchBox {
+    width: 250px;
+    height: 39px;
+}
+
+.searchBox .input {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(226, 228, 255);
+    border-radius: 3px;
+    padding: 13px;
+}
+
+.searchBox {
+    position: relative;
+}
+
+.searchBox .searchButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.search-button {
+    width: 50px;
+    height: 100%;
+    background-color: rgb(156, 161, 236);
+    cursor: pointer;
+}
+
+.searchButton .fas {
+    font-size: 18px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.searchButton:hover {
+    background-color: rgb(133, 141, 248);
+}
+
+.addtoCart .fas {
+    font-size: 20px;
+}
+
+.userProfile {
+    position: relative;
+}
+
+.userImage .fas {
+    position: absolute;
+    top: 10%;
+    left: -35%;
+    font-size: 20px;
+}
+
+.dropdownSelect .fa {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.userProfile {
+    display: flex;
+    gap: 7px;
+}
+
+.leftSection {
+    display: flex;
+    margin: 80px 110px;
+    justify-content: space-between;
+}
+
+.leftSection img {
+    box-shadow: 10px 5px 5px rgb(233, 235, 253);
+    border-radius: 10px;
+    width: 640px;
+    height: 400px;
+}
+
+.mainClass {
+    width: 100%;
+    margin: 0 auto;
+    padding: 9px 10px;
+}
+
+.rightSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bookedHotel {
+    width: 400px;
+    height: 200px;
+    background-color: rgb(149, 155, 223);
+    padding: 20px;
+}
+
+.bookedOnMap {
+    width: 400px;
+    height: 200px;
+}
+
+.bookedOnMap img {
+    width: 100%;
+    height: 100%;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bookedHotel p {
+    color: #fff;
+}
+
+.bookedHotel .text {
+    margin: 1px 8px;
+    font-weight: 1200;
+    font-size: 15px;
+}
+
+.bookedHotel .price {
+    font-weight: bold;
+    font-size: 25px;
+    margin: 1px 8px;
+}
+
+.bookedHotel .no {
+    font-size: 15px;
+    margin: 1px 8px;
+}
+
+.bookedHotel h4 {
+    font-size: 22px;
+    color: #fff;
+    font-weight: bold;
+    margin: 14px 5px;
+}
+
+.guests {
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.guests .far {
+    font-size: 18px;
+}
+
+.guests p {
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.butt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.butt button {
+    border: 0;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 5px 60px;
+    outline: none;
+    background-color: rgb(46, 110, 184);
+    color: #fff;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.secondSection {
+    width: 100%;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 120px;
+}
+
+.checked {
+    color: orange;
+}
+
+.bookNow {
+    border: 0;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 5px 60px;
+    outline: none;
+    background-color: rgb(46, 110, 184);
+    color: #fff;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.hotelName {
+    margin-top: 30px;
+}
+
+.ratings button {
+    border: 0;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 5px 20px;
+    outline: none;
+    background-color: rgb(46, 110, 184);
+    color: #fff;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.hotelName h2 {
+    font-weight: 900;
+}
+
+.footerMainContainer {
+    width: 100%;
+}
+
+.footerContainer {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient( to right, rgb(156, 161, 236) 0%, rgb(129, 136, 231) 51%, rgb(156, 161, 236) 100%);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    margin-top: 20px;
+}
+
+.footerLogo {
+    width: 300px;
+    filter: brightness(0) invert(1);
+}
+
+.listItemsFooter ul {
+    color: #fff;
+    margin-top: -1em;
+}
+
+.item li {
+    margin: 6px 0;
+    list-style: none;
+}

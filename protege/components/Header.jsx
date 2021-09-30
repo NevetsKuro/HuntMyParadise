@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Link from 'next/link';
+// import Link from 'next/link';
+import { ChevronDown, Menu, ShoppingCart, User, XSquare } from 'react-feather';
 import styles from '../styles/Header.module.css';
 
 const Header = () => {
@@ -16,14 +17,14 @@ const Header = () => {
               }}
               aria-hidden="true"
             >
-              <b>=</b> HuntMyParadise
+              {!showNav ? <Menu /> : <XSquare />} &nbsp;&nbsp;HuntMyParadise
             </span>
           </div>
           {showNav && (
             <div className={styles.leftNavigation}>
               <style jsx>{`
                 ul li.link:hover {
-                  color: #687592;
+                  color: #16294c;
                   cursor: pointer;
                 }
               `}</style>
@@ -62,9 +63,15 @@ const Header = () => {
         </div>
         <div className={styles.headerRight}>
           <div className={styles.menuContainer}>
-            <div className={styles.menuCart}>Cart</div>
-            <div className={styles.menuName}>Guest</div>
-            <div className={styles.menuDropdown}> Dropdown</div>
+            <div className={styles.menuCart}>
+              <ShoppingCart />
+            </div>
+            <div className={styles.menuName}>
+              <User />
+              <ChevronDown />
+            </div>
+            {/* <div className={styles.menuDropdown}>
+            </div> */}
           </div>
         </div>
       </nav>
