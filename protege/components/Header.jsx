@@ -1,8 +1,11 @@
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import Link from 'next/link';
+// import Link from 'next/link';
+import { ChevronDown, Menu, ShoppingCart, User, XSquare } from 'react-feather';
 import styles from '../styles/Header.module.css';
 
 const Header = () => {
+  const router = useRouter();
   const [showNav, setShowNav] = useState(false);
   return (
     <>
@@ -16,29 +19,47 @@ const Header = () => {
               }}
               aria-hidden="true"
             >
-              <b>=</b> HuntMyParadise
+              {!showNav ? <Menu /> : <XSquare />} &nbsp;&nbsp;HuntMyParadise
             </span>
           </div>
           {showNav && (
             <div className={styles.leftNavigation}>
               <style jsx>{`
                 ul li.link:hover {
-                  color: #687592;
+                  color: #16294c;
                   cursor: pointer;
                 }
               `}</style>
               <ul>
-                <li className="link">Home</li>
+                <li
+                  className="link"
+                  onClick={() => router.push('/Home')}
+                  aria-hidden="true"
+                >
+                  Home
+                </li>
                 <li className="link">Dashboard</li>
                 <li>
                   Search
                   <ul>
                     <li className="link">Category</li>
-                    <li className="link">Cities</li>
+                    <li
+                      className="link"
+                      onClick={() => router.push('/Browse')}
+                      aria-hidden="true"
+                    >
+                      Cities
+                    </li>
                     <li className="link">Coordinates</li>
                   </ul>
                 </li>
-                <li className="link">Map View</li>
+                <li
+                  className="link"
+                  onClick={() => router.push('/maps/search')}
+                  aria-hidden="true"
+                >
+                  Map View
+                </li>
                 <li className="link">Booked Hotels</li>
                 <li className="link">Chat Box</li>
                 <li className="link">Booking & Payment</li>
@@ -62,9 +83,15 @@ const Header = () => {
         </div>
         <div className={styles.headerRight}>
           <div className={styles.menuContainer}>
-            <div className={styles.menuCart}>Cart</div>
-            <div className={styles.menuName}>Guest</div>
-            <div className={styles.menuDropdown}> Dropdown</div>
+            <div className={styles.menuCart}>
+              <ShoppingCart />
+            </div>
+            <div className={styles.menuName}>
+              <User />
+              <ChevronDown />
+            </div>
+            {/* <div className={styles.menuDropdown}>
+            </div> */}
           </div>
         </div>
       </nav>

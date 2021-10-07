@@ -1,31 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-import Header from '../components/Header';
-import JumboWelcome from '../components/JumboWelcome';
-
-function LoadingMessage() {
-  return (
-    <div className={styles.splashScreen}>
-      <img
-        src="https://i.pinimg.com/originals/ae/51/e1/ae51e1395e87cc72c6021df5445cc5f8.gif"
-        alt="loadingScreen"
-      />
-    </div>
-  );
-}
+import SignIn from '../components/SignIn';
+import SignUp from '../components/SignUp';
+import LoadingMessage from '../components/loading';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
+  const [authOpt, setAuthOpt] = useState('signin');
   useEffect(() => {
+    setAuthOpt('signIn');
     setTimeout(() => {
       setLoading(false);
     }, 1500);
   }, []);
 
   if (loading) {
-    return LoadingMessage();
+    return <LoadingMessage />;
   }
   return (
     <div className={styles.container}>
@@ -35,9 +26,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <Header />
-        <JumboWelcome />
+      <main className={styles.main1}>
+        {authOpt === 'signIn' ? (
+          <SignIn setOpt={setAuthOpt} />
+        ) : (
+          <SignUp setOpt={setAuthOpt} />
+        )}
       </main>
     </div>
   );

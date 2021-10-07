@@ -80,6 +80,9 @@ export default function Searchmaps() {
         }
       );
     });
+
+    // references -- https://docs.mapbox.com/help/tutorials/building-a-store-locator/
+
     map.current.on('click', ({ point }) => {
       // If the user clicked on one of your markers, get its information.
       const features = map.current.queryRenderedFeatures(point, {
@@ -94,9 +97,20 @@ export default function Searchmaps() {
       const popup = new mapboxgl.Popup({ offset: [0, -15] })
         .setLngLat(feature.geometry.coordinates)
         .setHTML(
-          `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+          `<h3>${feature.properties.title}<span class="hotelView" data-hotel-id="12012">View</span></h3><p>${feature.properties.description}</p>`
         )
         .addTo(map.current);
+      document.querySelector('.hotelView').addEventListener(
+        'click',
+        (e) => {
+          console.log(
+            'hotel clicked',
+            e.currentTarget,
+            e.currentTarget.getAttribute('data-hotel-id')
+          );
+        },
+        false
+      );
     });
   });
 
