@@ -1,9 +1,11 @@
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 // import Link from 'next/link';
 import { ChevronDown, Menu, ShoppingCart, User, XSquare } from 'react-feather';
 import styles from '../styles/Header.module.css';
 
 const Header = () => {
+  const router = useRouter();
   const [showNav, setShowNav] = useState(false);
   return (
     <>
@@ -29,17 +31,35 @@ const Header = () => {
                 }
               `}</style>
               <ul>
-                <li className="link">Home</li>
+                <li
+                  className="link"
+                  onClick={() => router.push('/Home')}
+                  aria-hidden="true"
+                >
+                  Home
+                </li>
                 <li className="link">Dashboard</li>
                 <li>
                   Search
                   <ul>
                     <li className="link">Category</li>
-                    <li className="link">Cities</li>
+                    <li
+                      className="link"
+                      onClick={() => router.push('/Browse')}
+                      aria-hidden="true"
+                    >
+                      Cities
+                    </li>
                     <li className="link">Coordinates</li>
                   </ul>
                 </li>
-                <li className="link">Map View</li>
+                <li
+                  className="link"
+                  onClick={() => router.push('/maps/search')}
+                  aria-hidden="true"
+                >
+                  Map View
+                </li>
                 <li className="link">Booked Hotels</li>
                 <li className="link">Chat Box</li>
                 <li className="link">Booking & Payment</li>

@@ -106,14 +106,24 @@ export default function Home() {
             <div
               key={v._id}
               className={styles.categoryCity}
-              onClick={() => setLocationFilter(v.cityName)}
-              onKeyDown={() => setLocationFilter(v.cityName)}
+              style={{
+                background:
+                  locationFilter === v.cityName ? '#5042a3' : 'mediumslateblue',
+              }}
+              onClick={() => {
+                if (locationFilter === v.cityName) {
+                  setLocationFilter('All');
+                } else {
+                  setLocationFilter(v.cityName);
+                }
+              }}
+              aria-hidden="true"
             >
               <h4>{v.cityName}</h4>
             </div>
           ))}
         </div>
-
+        <h2 style={{ width: '72%' }}>Filters:</h2>
         <div className={styles.filters}>
           <div>
             <select
