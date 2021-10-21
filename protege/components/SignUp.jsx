@@ -3,29 +3,29 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 import styles from '../styles/SignUp.module.css';
 
 export default function SignUp({ setOpt }) {
   const router = useRouter();
 
-  const firstName = document.querySelector('#fname');
-  const lastName = document.querySelector('#lname');
-  // const date = document.querySelector('#date');
-  // const email = document.querySelector('#email');
-  const phone = document.querySelector('#phone');
-  const password = document.querySelector('#password');
-
   const setError = (id, error) => {
     // document.querySelector('#efname').innerHTML = error;
     // document.querySelector('#elname').innerHTML = error;
     const txtField = id.parentElement;
+    console.log(error);
     const span = txtField.querySelector('span');
     txtField.className = 'txt_field error';
     span.innerText = error;
   };
   const validateForm = () => {
     let returnVal = true;
-
+    const firstName = document.querySelector('#fname');
+    const lastName = document.querySelector('#lname');
+    // const date = document.querySelector('#date');
+    const email = document.querySelector('#email');
+    const phone = document.querySelector('#phone');
+    const password = document.querySelector('#password');
     const fname = firstName.value.trim();
     const lname = lastName.value.trim();
     // const datevalue = date.value.trim();
@@ -67,13 +67,34 @@ export default function SignUp({ setOpt }) {
 
     return returnVal;
   };
-  const submitForm = () => {
+  const submitForm = (e) => {
+    e.preventDefault();
+    const firstName = document.querySelector('#fname');
+    const lastName = document.querySelector('#lname');
+    // const date = document.querySelector('#date');
+    const email = document.querySelector('#email');
+    const phone = document.querySelector('#phone');
+    const password = document.querySelector('#password');
     if (validateForm()) {
       // POST API
-
-      router.push('/', { opt: 'signIn' });
+      axios
+        .post('http://localhost:5000/api/users', {
+          name: firstName.value + lastName.value,
+          email: email.value,
+          password: password.value,
+        })
+        .then((response) => {
+          console.log(response.data);
+          router.push('/', { opt: 'signIn' });
+          alert('Success!');
+        })
+        .catch((error) => {
+          alert('failed to sign up!');
+          console.log(error);
+        });
     } else {
       // warning message
+      alert('Invalid data!');
     }
   };
   useEffect(() => {

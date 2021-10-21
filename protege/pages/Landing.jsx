@@ -1,5 +1,7 @@
 import React from 'react';
+import { Star } from 'react-feather';
 import styles from '../styles/Landing.module.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Landing() {
   return (
@@ -54,39 +56,37 @@ export default function Landing() {
 
         <section className={styles.secondSection}>
           <div className={styles.hotelLists}>
-            <div className={styles.hotelName}>
-              <span className="fa fa-star checked" />
-              <span className="fa fa-star checked" />
-              <span className="fa fa-star" />
-              <span className="fa fa-star" />
-              <span className="fa fa-star" />
+            {Array(4)
+              .fill(1)
+              .map((x) => (
+                <div key={x} className={styles.hotelName}>
+                  {Array(2).fill(<Star size={24} color="#ffff00" />)}
+                  {Array(3).fill(<Star size={24} color="#aaa" />)}
 
-              <h2>JW MARRIOT HOTEL</h2>
-              <p>Compimentry Activities,Marriage Halls,Gyms</p>
+                  <h2 className="m-0">JW MARRIOT HOTEL</h2>
+                  <em>
+                    <b>Amenities: </b>Compimentry Activities, Marriage Halls,
+                    Gyms
+                  </em>
+                  <br />
+                  <p>
+                    <b>Description: </b>Lorem Ipsum is simply dummy text of the
+                    printing and typesetting industry. Lorem Ipsum has been the
+                    industry s standard dummy text ever since the 1500s, when an
+                    unknown printer took a galley of type and scrambled it to
+                    make a type specimen book. It has survived not only five
+                    centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged
+                  </p>
+                  <button type="button" className={styles.bookNow}>
+                    Book Now
+                  </button>
 
-              <button type="button" className={styles.bookNow}>
-                Book Now
-              </button>
-            </div>
-
-            <div className={styles.hotelName}>
-              <span className="fa fa-star checked" />
-              <span className="fa fa-star checked" />
-              <span className="fa fa-star" />
-              <span className="fa fa-star" />
-              <span className="fa fa-star" />
-
-              <h2>GRAND HYAAT</h2>
-              <p>Compimentry Activities,Tushar Marriage Halls,Gyms</p>
-
-              <button type="button" className={styles.bookNow}>
-                Book Now
-              </button>
-            </div>
-          </div>
-
-          <div className={styles.ratings}>
-            <button type="button">4.5</button>
+                  <div className={styles.ratings}>
+                    <button type="button">4.5</button>
+                  </div>
+                </div>
+              ))}
           </div>
         </section>
       </main>

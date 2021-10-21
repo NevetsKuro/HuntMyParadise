@@ -90,7 +90,7 @@
 
 .leftSection {
     display: flex;
-    margin: 80px 110px;
+    margin: 80px 16%;
     justify-content: space-between;
 }
 
@@ -99,6 +99,7 @@
     border-radius: 10px;
     width: 640px;
     height: 400px;
+    margin-right: 20px;
 }
 
 .mainClass {
@@ -220,11 +221,27 @@
     font-weight: 900;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 8px;
+    margin-left: auto;
 }
 
 .hotelName {
+    position: relative;
     margin-top: 30px;
+    border: 2px solid grey;
+    padding: 8px 32px;
+    border-radius: 8px;
+}
+
+.hotelLists {
+    width: 80%;
+    margin: auto;
+}
+
+.hotelName>.ratings {
+    position: absolute;
+    top: 16px;
+    right: 24px;
 }
 
 .ratings button {

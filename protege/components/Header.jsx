@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+import { Dropdown } from 'react-bootstrap';
 // import Link from 'next/link';
 import { ChevronDown, Menu, ShoppingCart, User, XSquare } from 'react-feather';
 import styles from '../styles/Header.module.css';
@@ -42,7 +43,13 @@ const Header = () => {
                 <li>
                   Search
                   <ul>
-                    <li className="link">Category</li>
+                    <li
+                      className="link"
+                      onClick={() => router.push('/Browse')}
+                      aria-hidden="true"
+                    >
+                      Category
+                    </li>
                     <li
                       className="link"
                       onClick={() => router.push('/Browse')}
@@ -50,7 +57,6 @@ const Header = () => {
                     >
                       Cities
                     </li>
-                    <li className="link">Coordinates</li>
                   </ul>
                 </li>
                 <li
@@ -61,7 +67,7 @@ const Header = () => {
                   Map View
                 </li>
                 <li className="link">Booked Hotels</li>
-                <li className="link">Chat Box</li>
+                <li className="link">FAQs</li>
                 <li className="link">Booking & Payment</li>
                 <li className="link">Profile</li>
                 <li className="link">Terms & Conditions</li>
@@ -87,8 +93,19 @@ const Header = () => {
               <ShoppingCart />
             </div>
             <div className={styles.menuName}>
-              <User />
-              <ChevronDown />
+              {/* <User />
+              <ChevronDown /> */}
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  <User />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Dashboard</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Logout</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
             </div>
             {/* <div className={styles.menuDropdown}>
             </div> */}
