@@ -1,0 +1,29 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.innercontainer {
+    width: 60%;
+    margin: auto;
+}
+
+.main {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.imageView {
+    max-height: 400px;
+    margin: 0 auto;
+    background: black;
+}
+
+.imageCenter {
+    display: flex;
+    justify-content: center;
+}

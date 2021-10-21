@@ -14,12 +14,12 @@
     align-items: center;
     overflow-x: scroll;
     padding-bottom: 16px;
-    margin: 8px 0;
+    margin: 4px 0;
     cursor: pointer;
 }
 
 .categoryCity {
-    padding: 8px 40px;
+    padding: 8px 24px;
     margin: 0 8px;
     border: 2px solid mediumslateblue;
     background: mediumslateblue;
@@ -34,21 +34,28 @@
 .filters {
     display: flex;
     width: 72%;
-    margin: 20px 0;
+    margin: 4px 0;
     justify-content: space-around;
     align-items: center;
+}
+
+.filterItem {
+    border: 3px solid dimgray;
+    border-radius: 20px;
+    padding: 0 8px;
+    overflow: hidden;
 }
 
 .filterSelectItem {
     padding: 8px;
     font-size: 16px;
-    font-weight: 600;
-    color: darkgrey;
-    border: 2px solid;
-    border-radius: 20px;
-    min-width: 200px;
+    font-weight: 300;
+    color: dimgray;
+    border: none;
+    min-width: 180px;
     outline: none;
     text-align: center;
+    cursor: pointer;
 }
 
 .hotelList {
@@ -74,6 +81,7 @@
 
 .imgContainer>img {
     width: 200px;
+    margin-right: 24px;
 }
 
 .bookNowButton {
@@ -92,6 +100,7 @@
     align-items: center;
     justify-content: space-between;
     width: 136px;
+    cursor: pointer;
 }
 
 .stars {

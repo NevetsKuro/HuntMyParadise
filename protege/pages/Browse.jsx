@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { Calendar, Star } from 'react-feather';
 import LoadingMessage from '../components/loading';
 import Header from '../components/Header';
@@ -100,7 +101,16 @@ export default function Home() {
 
       <main className={styles.main}>
         <Header />
-        <h2 style={{ width: '72%' }}>Cities:</h2>
+        <h2
+          style={{
+            width: '72%',
+            margin: 0,
+            marginTop: 24,
+            textAlign: 'center',
+          }}
+        >
+          Cities:
+        </h2>
         <div className={styles.categoryCities}>
           {cities.map((v) => (
             <div
@@ -123,9 +133,18 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <h2 style={{ width: '72%' }}>Filters:</h2>
+        <h2
+          style={{
+            width: '72%',
+            margin: 0,
+            marginTop: 24,
+            textAlign: 'center',
+          }}
+        >
+          Filters:
+        </h2>
         <div className={styles.filters}>
-          <div>
+          <div className={styles.filterItem}>
             <select
               id="filterStar"
               className={styles.filterSelectItem}
@@ -215,7 +234,7 @@ export default function Home() {
               <div key={v._id} className={styles.hotelItems}>
                 <div className={styles.imgContainer}>
                   <img
-                    src="https://s3-alpha-sig.figma.com/img/7a71/34aa/89d5a3d7ad2066b480296b348d30ab58?Expires=1633910400&Signature=L5f-VSO0GTp49y8T6wS-OhwsgkQCzX53hGUvpVfQ7EHqexMZtTe50iBSv3A0CpmQSZFPBS0EJBAIZR18FkhV~y0r-t90IhrV9jhaSs14LlsAzNfz5whc27ezDu-b51IzmIsk2YlYAH8neHAW3qDp2lOGL6xwsDNhWdUHaAeLl28UIwoZrmQByYN-gz8jQJs1TWSdANH9X~cbxOwypscYtf0DZJIZ-tuHY5KRaLDJw2ObMABmcB4HFdSqiGoXI2gi~SM0-MXE2Z8PpEQ0h-A4Tlo6W87~w9s9KsDVGZDh9m5POiCa4ckhuNHH-4rWFLbD5t4ATAXS7W~2VBFi9rpz9Q__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                    src="http://cdn.cnn.com/cnnnext/dam/assets/190816161527-hotel-views-intercontinental-hong-kong.jpg"
                     alt="hotel view"
                   />
                 </div>
@@ -228,9 +247,11 @@ export default function Home() {
                   <p className={styles.removeSpaces}>{v.viewAmenities}</p>
                 </div>
                 <div className={styles.linksContainer}>
-                  <button type="button" className={styles.bookNowButton}>
-                    <Calendar /> Book Now
-                  </button>
+                  <Link href={`/hotel/${encodeURIComponent(v._id)}`}>
+                    <button type="button" className={styles.bookNowButton}>
+                      <Calendar /> Book Now
+                    </button>
+                  </Link>
                   <div className={styles.ratings}>
                     User Ratings:
                     <br /> {v.rating}/5

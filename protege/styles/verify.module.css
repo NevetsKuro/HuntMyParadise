@@ -1,0 +1,49 @@
+.otpContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1da1f2;
+}
+
+.otpInnerContainer {
+    height: 240px;
+    width: 500px;
+    padding: 40px;
+    border: 4px solid rgb(255, 255, 255);
+    border-radius: 16px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.otpInputs {
+    width: 100%;
+    height: 56px;
+}
+
+.OTPCode {
+    width: 40px;
+    height: 48px;
+    margin-right: 24px;
+    border: 2px solid darkgray;
+    border-radius: 8px;
+    color: darkgray;
+    font-size: 32px;
+    text-align: center;
+}
+
+.VerifyButton {
+    width: 200px;
+    background-color: #1da1f2;
+    color: white;
+    font-weight: 800;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: -1px 4px 8px -6px #009688;
+}
