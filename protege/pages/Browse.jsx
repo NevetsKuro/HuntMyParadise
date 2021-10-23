@@ -235,7 +235,7 @@ export default function Home({ data }) {
         </div>
 
         <div className={styles.hotelList}>
-          {data
+          {hotels
             .filter(
               (v) => v.location === locationFilter || locationFilter === 'All'
             )
@@ -243,10 +243,10 @@ export default function Home({ data }) {
               (v) =>
                 v.stars === parseInt(starsFilter, 10) || starsFilter === 'All'
             )
-            // .filter((v) => v.member === memberFilter || memberFilter === 'All')
-            // .filter(
-            //   (v) => v.cost === parseInt(costFilter, 10) || costFilter === 'All'
-            // )
+            .filter((v) => v.member === memberFilter || memberFilter === 'All')
+            .filter(
+              (v) => v.cost === parseInt(costFilter, 10) || costFilter === 'All'
+            )
             .map((v) => (
               <div key={v._id} className={styles.hotelItems}>
                 <div className={styles.imgContainer}>
