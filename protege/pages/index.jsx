@@ -12,7 +12,7 @@ export default function Home() {
     setAuthOpt('signIn');
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 400);
   }, []);
 
   if (loading) {

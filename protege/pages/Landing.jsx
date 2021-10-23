@@ -39,9 +39,11 @@ export default function Landing() {
                 </div>
               </div>
               <div className={styles.butt}>
-                <button type="button" className={styles.btnn}>
-                  View Other Options
-                </button>
+                <a href="/Browse">
+                  <button type="button" className={styles.btnn}>
+                    View Hotels
+                  </button>
+                </a>
               </div>
             </div>
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
@@ -7,7 +8,23 @@ import LoadingMessage from '../components/loading';
 import Header from '../components/Header';
 import styles from '../styles/Browse.module.css';
 
-export default function Home() {
+export async function getStaticProps(context) {
+  const res = await fetch('http://localhost:5000/api/hotels');
+  const data = await res.json();
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { data }, // will be passed to the page component as props
+  };
+}
+
+// eslint-disable-next-line react/prop-types
+export default function Home({ data }) {
   const [loading, setLoading] = useState(true);
   const [starsFilter, setStarsFilter] = useState('All');
   const [costFilter, setCostFilter] = useState('All');
@@ -85,7 +102,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 400);
   }, []);
 
   if (loading) {
@@ -218,7 +235,7 @@ export default function Home() {
         </div>
 
         <div className={styles.hotelList}>
-          {hotels
+          {data
             .filter(
               (v) => v.location === locationFilter || locationFilter === 'All'
             )
@@ -226,10 +243,10 @@ export default function Home() {
               (v) =>
                 v.stars === parseInt(starsFilter, 10) || starsFilter === 'All'
             )
-            .filter((v) => v.member === memberFilter || memberFilter === 'All')
-            .filter(
-              (v) => v.cost === parseInt(costFilter, 10) || costFilter === 'All'
-            )
+            // .filter((v) => v.member === memberFilter || memberFilter === 'All')
+            // .filter(
+            //   (v) => v.cost === parseInt(costFilter, 10) || costFilter === 'All'
+            // )
             .map((v) => (
               <div key={v._id} className={styles.hotelItems}>
                 <div className={styles.imgContainer}>
@@ -243,8 +260,10 @@ export default function Home() {
                     {Array(v.stars).fill(<Star size={24} color="#ffff00" />)}
                     {Array(5 - v.stars).fill(<Star size={24} color="#aaa" />)}
                   </span>
-                  <h3 className={styles.removeSpaces}>{v.hotelName}</h3>
-                  <p className={styles.removeSpaces}>{v.viewAmenities}</p>
+                  <h3 className={styles.removeSpaces}>{v.name}</h3>
+                  <p className={styles.removeSpaces}>
+                    {v.amenities?.join(', ')}
+                  </p>
                 </div>
                 <div className={styles.linksContainer}>
                   <Link href={`/hotel/${encodeURIComponent(v._id)}`}>
