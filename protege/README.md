@@ -55,4 +55,6 @@ To run frontend
 
 To run backend
 
-> nodemon server.js
+> nodemon server.js 
+  OR
+> node server.js
